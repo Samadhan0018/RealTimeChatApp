@@ -1,0 +1,39 @@
+.userInfo {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+
+  .user {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+
+    img {
+      width: 50px;
+      /* Set avatar size */
+      height: 50px;
+      border-radius: 50%;
+      /* Optional: makes avatar circular */
+      object-fit: cover;
+    }
+  }
+
+  .icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    /* Space between the icons */
+
+
+    img {
+      width: 24px;
+      /* Adjust icon size */
+      height: 24px;
+      cursor: pointer;
+      /* Optional: cursor change on hover */
+    }
+  }
+}
