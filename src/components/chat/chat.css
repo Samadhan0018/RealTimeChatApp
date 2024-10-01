@@ -6,6 +6,7 @@
     border-right: 1px solid #dddddd35;
     height: 100%;
     max-width: 100%;
+    min-width: 200px;
     overflow-y: auto;
     overflow-x: hidden;
     word-wrap: break-word;
@@ -216,9 +217,12 @@ input {
     margin-right: 5px;
 
     .picker {
-        position: absolute;
-        bottom: 50px;
-        left: 0;
+        position:absolute;
+        height: 60%;
+        bottom: 0px;
+        left: 70%;
+        overflow: hidden;
+        border-radius: 10px;
 
     }
 }
