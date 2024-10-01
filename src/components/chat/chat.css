@@ -3,9 +3,17 @@
     border-left: 1px solid #dddddd35;
     border-right: 1px solid #dddddd35;
     height: 100%;
-    /* width: 50%; */
+    max-width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    word-wrap: break-word;
     display: flex;
     flex-direction: column;
+
+
+
+    overflow: hidden;
+    /* Prevents overflow */
 
     .top {
         padding: 20px;
@@ -34,6 +42,7 @@
                 display: flex;
                 flex-direction: column;
                 gap: 5px;
+                overflow: hidden;
 
                 span {
                     font-size: 18px;
@@ -45,6 +54,11 @@
                     font-size: 14px;
                     font-weight: 300;
                     color: #a5a5a5;
+                    padding-right: 5px;
+                    text-overflow: ellipsis;
+                    font-weight: 300;
+
+                    overflow: hidden;
 
                 }
 
@@ -65,153 +79,107 @@
 
     }
 
-    /* .center {
+
+
+    .center {
         padding: 20px;
         flex: 1;
-        overflow: scroll;
+        overflow-y: scroll;
+        /* Ensure vertical scrolling */
         scrollbar-width: none;
+        /* Hide scrollbar for Firefox */
         display: flex;
         flex-direction: column;
         gap: 20px;
-
-       
-        .message-own {
-            align-self: flex-end;
-
-        .text{
-
-            flex-wrap: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-
-
-
-            p{
-                background-color: #5183fe; 
-            
-               
-            
-        
-
-        .message {
-            min-width: 70%;
-            display: flex;
-            gap: 20px;
-
-            img{
-                width: 30px;
-                height: 30px;
-                border-radius: 50%;
-                object-fit: cover;
-               } 
-
-        }
     }
 
+    .text img {
+        background-repeat: 10px;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        border-radius: 0%;
+        display: flex;
+
+    }
+
+    /* General message styling */
+    .message {
+        min-width: 70%;
+        display: flex;
+        gap: 10px;
+
+        align-items: flex-start;
+        word-wrap: break-word;
+
+        p {
+            background-color: rgba(17, 25, 40, 0.3);
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 400px;
+            word-wrap: break-word;
         }
-       
-
-
 
 
     }
 
-} */
+    /* For messages aligned to the right (own messages) */
+    .message-own {
+        align-self: flex-end;
+        min-width: 70%;
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+        align-items: flex-end;
+        word-wrap: break-word;
+
+    }
 
 
 
 
 
+}
 
 
-
-
-
-
-
-
-
-
-.center {
-    padding: 20px;
-    flex: 1;
-    overflow-y: scroll; /* Ensure vertical scrolling */
-    scrollbar-width: none; /* Hide scrollbar for Firefox */
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  /* General message styling */
-  .message {
-    min-width: 70%;
-    display: flex;
-    gap: 10px;
-
- p{
-    background-color: rgba(17,25,40,0.3);
+.message-own p {
+    background-color: #5183fe;
     color: white;
     padding: 10px;
     border-radius: 10px;
     max-width: 400px;
     word-wrap: break-word;
- }
- 
-   
-  }
-  
-  /* For messages aligned to the right (own messages) */
-  .message-own {
-    align-self: flex-end;
-  }
-  
-  /* Styling for text bubbles */
-  .text {
-    /* display: flex;
-    flex-direction: column;
-    gap: 5px;
-   */
-    img{
-      width: 100%;
-      height: 300px;
-      background-repeat: 10px;
-      object-fit: cover;
-   }
+}
 
 
-  }
-  
-  /* Styling for message text */
-  .message-own p {
-    background-color: #5183fe;
-    color: white;
-    padding: 10px;
-    border-radius: 10px;
-    max-width: 400px; /* Optional: Limit the max width of the message bubble */
-    word-wrap: break-word; /* Ensure long words break into new lines */
-  }
-  
-  /* Timestamp styling */
-  .text span {
+/* Timestamp styling */
+.text span {
     font-size: 12px;
     color: #ccc;
-  }
-  
-  /* Avatar image styling */
-  .message img {
+}
+
+/* Avatar image styling */
+.message img {
     width: 30px;
     height: 30px;
     border-radius: 50%;
     object-fit: cover;
     align-items: center;
-  }
-  
-  /* Hide scrollbar in webkit browsers (Chrome, Safari) */
-  .center::-webkit-scrollbar {
+    display: flex;
+}
+
+/* Hide scrollbar in webkit browsers (Chrome, Safari) */
+.center::-webkit-scrollbar {
     display: none;
-  }
-  
+}
+
+@media screen and (max-width: 600px) {
+    .message {
+        max-width: 90%;
+        /* Adjust max-width for smaller screens */
+    }
+}
 
 
 
@@ -224,62 +192,81 @@
 
 
 
-    .bottom {
-        padding: 20px;
+
+.bottom {
+
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+    align-items: center;
+    padding: 10px;
+    border-top: 1px solid #dddddd35;
+    width: 100%;
+
+
+
+
+    .icons {
         display: flex;
-        align-items: center;
-        justify-content: space-between;
-        border-top: 1px solid #dddddd35;
         gap: 20px;
-        margin-top: auto;
-
-        .icons {
-            display: flex;
-            gap: 20px;
-        }
-
-
-        img {
-            width: 20px;
-            height: 20px;
-            cursor: pointer;
-
-
-        }
     }
 
-    input {
-        flex: 1;
-        background-color: rgba(17, 25, 40, 0.5);
-        border: none;
-        outline: none;
-        color: white;
-        padding: 20px;
-        border-radius: 10px;
-        font-size: 16;
+
+    img {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+
+
     }
+}
 
-    .emoji {
-        position: relative;
+input {
+    flex: 1;
+    background-color: rgba(17, 25, 40, 0.5);
+    border: none;
+    outline: none;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 16;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    bottom: 0;
+    min-width: 30%;
+    max-height: 50px;
+    margin: 0px 5px 0px 5px;
+}
 
-        .picker {
-            position: absolute;
-            bottom: 50px;
-            left: 0;
+.emoji {
+    /* position: relative; */
+    /* gap: 10px; */
+    margin-right: 5px;
 
-        }
+    .picker {
+        position: absolute;
+        bottom: 50px;
+        left: 0;
+
     }
+}
 
-    .sendButton {
-        background-color: #5183fe;
+.sendButton {
+    /* 
         color: white;
         padding: 10px 20px;
         border: none;
         border-radius: 5px;
-        cursor: pointer;
+        cursor: pointer; */
+    padding: 10px 10px;
+    gap: 5px;
+    background-color: #5183fe;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 
 
-
-    }
 
 }

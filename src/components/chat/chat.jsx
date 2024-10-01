@@ -3,18 +3,18 @@ import "./chat.css"
 import EmojiPicker from "emoji-picker-react"
 const Chat = () => {
 
-    const [open,setOpen]=useState(false);
+    const [open, setOpen] = useState(false);
     const [text, setText] = useState("");
-    const handleEmoji=e=>{
-     setText(prev=>prev+e.emoji);
+    const handleEmoji = e => {
+        setText(prev => prev + e.emoji);
         setOpen(false)
-        
+
     };
-       console.log(text);
+    console.log(text);
 
     return (
 
-        
+
         <div className='chat'>
             <div className="top">
                 <div className="user">
@@ -48,9 +48,9 @@ const Chat = () => {
 
                 </div>
                 <div className="message-own">
-                   
+
                     <div className="text " id="text">
-                        <p>Lorem ipsum, dolor sit amet consectetur 
+                        <p>Lorem ipsum, dolor sit amet consectetur
 
                         </p>
                         <span>1 min ago</span>
@@ -87,14 +87,14 @@ const Chat = () => {
                     <img src="./mic.png" alt="" />
                 </div>
                 <input type="text" id="input"
-                 placeholder="type a message..."
-                 value={text}
-                  onChange={e=>setText(e.target.value)} />
-                 <div className="emoji">
-                    <img src="./emoji.png" alt="" onClick={()=> setOpen((prev)=>!prev)}/>
-                   <div className="picker"><EmojiPicker open ={open} onEmojiClick={handleEmoji}/>
-                   </div>
-                     </div>
+                    placeholder="type a message..."
+                    value={text}
+                    onChange={e => setText(e.target.value)} />
+                <div className="emoji">
+                    <img src="./emoji.png" alt="" onClick={() => setOpen((prev) => !prev)} />
+                    <div className="picker"><EmojiPicker open={open} onEmojiClick={handleEmoji} />
+                    </div>
+                </div>
                 <button className="sendButton">Send</button>
             </div>
         </div>

@@ -18,6 +18,7 @@
       gap: 20px;
       border-radius: 10px;
       padding: 10px;
+      max-height: 40px;
       /* Internal padding for the search bar */
 
       img {
