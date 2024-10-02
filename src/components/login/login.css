@@ -1,0 +1,189 @@
+/* Container Styles */
+.login {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rgb(254, 254, 254);
+    border-radius: 14px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login:hover {
+    transform: scale(1.01);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Item Styles (Login and Signup) */
+.item {
+    width: 45%;
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    max-block-size: 1000px;
+    max-height: 100vh;
+    padding: 5px 15px 5px 15px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    height: fit-content;
+}
+
+.item:hover {
+    background-color: transparent;
+    background-origin: border-box;
+    background-repeat: no-repeat;
+}
+
+h2 {
+    font-size: 1.6rem;
+    /* Reduced font size */
+    color: #ffffff;
+    margin-bottom: 20px;
+    /* Adjusted margin */
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    animation: fadeIn 0.8s ease;
+}
+
+h2::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 45px;
+    /* R#educed underline width */
+    height: 3px;
+    background-color: #5183fe;
+}
+
+/* Separator Style */
+.separator {
+    width: 1px;
+    height: calc(100% - 80px);
+    /* Adjusted height of separator */
+    background-color: #5b4949;
+    animation: fadeIn 1s ease;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    animation: fadeInUp 1s ease;
+
+    input {
+        padding: 10px 10px 10px 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        align-items: center;
+        margin: 5px;
+        font-family: 'Roboto', sans-serif;
+        transition: border 0.3s ease, box-shadow 0.3s ease;
+    }
+}
+
+input:focus {
+    border-color: #5183fe;
+    box-shadow: 0 4px 8px rgba(81, 131, 254, 0.2);
+}
+
+button {
+    padding: 10px;
+    /* Reduced button padding */
+    background: linear-gradient(45deg, #5183fe, #845ef7);
+    color: #fff;
+    border: none;
+    margin-top: 10px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    /* Slightly reduced font size */
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(81, 131, 254, 0.5);
+    font-family: 'Poppins', sans-serif;
+}
+
+button:hover {
+    background: linear-gradient(45deg, #3a63d1, #7042e0);
+    transform: translateY(-3px);
+}
+
+button:active {
+    transform: translateY(2px);
+    box-shadow: none;
+}
+
+/* Avatar Upload Styles */
+label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+    margin-bottom: 12px;
+    /* Reduced margin */
+}
+
+label img {
+    width: 90px;
+    /* Slightly reduced avatar size */
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 12px;
+    /* Reduced margin */
+    border: 3px solid transparent;
+    transition: border 0.3s ease, transform 0.3s ease;
+    background-color: #f0f0f0;
+}
+
+label:hover img {
+    border-color: #5183fe;
+    transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .login {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .item {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .separator {
+        display: none;
+    }
+}
