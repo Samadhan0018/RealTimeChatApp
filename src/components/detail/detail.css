@@ -1,5 +1,5 @@
 .detail {
-
+    height: 80vh;
     align-items: center;
     justify-content: space-between;
     overflow-y: auto;
@@ -42,7 +42,7 @@
             transition: background-color 0.2s ease;
 
             &:hover {
-                background-color: #555772;
+                background-color: #61533c7b;
             }
 
             .title {
@@ -78,7 +78,7 @@
             .photoItem {
                 display: flex;
                 align-items: center;
-
+                
                 padding-top: 10px;
                 border-radius: 5px;
                 box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
@@ -108,10 +108,15 @@
                 }
             }
         }
+        .photoItem:hover{
+            background-color: #2b2521ec;
+        }
     }
 
     button {
-
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 10px;
         padding: 10px 15px;
         background-color: #e74c3c;
         color: #fff;

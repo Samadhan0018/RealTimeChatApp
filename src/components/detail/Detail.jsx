@@ -65,10 +65,19 @@ const Detail = () => {
                         <img src="./arrowDown.png" alt="" className="icon" />
                     </div>
                 </div>
-            </div>
-            <button>Block user</button>
+                <div>
+                    <button>Block user</button>
+                </div>
+                <div>
+                    <button> Delete user</button>
+                </div>
 
+
+
+            </div>
+           
         </div>
+        
     )
 }
 

@@ -40,7 +40,7 @@
       width: 36px;
       height: 36px;
       background-color: rgba(17, 25, 40, 0.5);
-      border-radius: 10px;
+      /* border-radius: 10px; */
       cursor: pointer;
       padding: 10px;
     }

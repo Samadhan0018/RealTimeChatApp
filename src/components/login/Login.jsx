@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { toast } from "react-toastify"; // Import toast here
+import "react-toastify/dist/ReactToastify.css";
 import "./login.css";
 
 const Login = () => {
@@ -16,11 +18,16 @@ const Login = () => {
     }
   };
 
+  const handleLogin = (e) => {
+    e.preventDefault();
+    // toast.warn("Login attempt detected!"); // Display a toast message
+  };
+
   return (
     <div className="login">
       <div className="item">
         <h2>Welcome back,</h2>
-        <form>
+        <form onSubmit={handleLogin}>
           <input type="text" placeholder="Email" name="email" />
           <input type="password" placeholder="Password" name="password" />
           <button type="submit">Sign In</button>
@@ -29,9 +36,9 @@ const Login = () => {
       <div className="separator"></div>  
       <div className="item">
         <h2>Create an Account</h2>
-        <form>
+        <form className="form">
           <label htmlFor="file">
-            <img src={avatar.url || "#"} alt="Avatar" />
+            <img src={avatar.url || "#"} alt="Avatar" className="Avatar"/>
             Upload an image
           </label>
           <input
